@@ -1,0 +1,30 @@
+# vi: set et ts=2 sw=2 sts=0 :
+
+fluentdinput:
+  build: fluentd
+  working_dir: /opt/netflow
+  command: bundle exec fluentd -c /opt/fluentd/etc/input.conf
+  volumes:
+    - ./fluentd/:/opt/fluentd/etc/
+  links:
+    - norikra
+
+norikra:
+  build: norikra/
+  command: norikra start --stats /data/stats.json
+  volumes:
+    - /dev/urandom:/dev/random
+    - ./data/:/data
+  ports:
+    - 26571:26571
+    - 26578:26578
+
+fluentdoutput:
+  build: fluentd/
+  command: fluentd -c /opt/fluentd/etc/output.conf
+  env_file:
+    - ./mackerel.env
+  volumes:
+    - ./fluentd/:/opt/fluentd/etc/
+  links:
+    - norikra
