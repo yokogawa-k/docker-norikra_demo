@@ -1,7 +1,15 @@
 # vi: set et ts=2 sw=2 sts=0 :
 
+dummer:
+  build: dummer/
+  command: sh -c 'sleep 5; dummer -c /opt/dummer/etc/dummer.conf -h fluentdinput'
+  volumes:
+    - ./dummer/:/opt/dummer/etc/
+  links:
+    - fluentdinput
+
 fluentdinput:
-  build: fluentd
+  build: fluentd/
   working_dir: /opt/netflow
   command: bundle exec fluentd -c /opt/fluentd/etc/input.conf
   volumes:
