@@ -1,6 +1,8 @@
 # [Norikra](http://norikra.toraja.klab.org/) のデモ（社内勉強用）
 
-WIP!!!!!!!!!!!!!!!!!!
+これ使って出来上がるもの
+
+![構成図](misc/norikra-demo.png)
 
 ## 必要なもの
 
