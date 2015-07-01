@@ -41,8 +41,6 @@ MACKEREL_API_KEY=xxxx
 
 1. `docker-compose up` でコンテナを生成する
 2. ホストマシンのポート 26578 にアクセスして Norikra をいじくる。
-  - Norikra での qeury_group は `metrics` とすると Mackerel に投げるようになります
-  - percentile の UDF を利用する場合は qeury_group を `metrics_percentiles` とすること
 3. Mackerel にログがはかれているてることを確認する (ﾟдﾟ)ｳﾏｰ
 
 ## 注意事項
