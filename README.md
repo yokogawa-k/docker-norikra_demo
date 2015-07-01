@@ -10,8 +10,8 @@ dummer コンテナは dummy log を生成するため。本番などではア�
 
 ## 参考にさせていただいた資料/サイト
 
-[メルカリでのNorikraの活用、 Mackerelを添えて](http://www.slideshare.net/kazeburo/norikra-mackerel)
-[Norikraでそこそこ手軽にNetFlow解析 - yunazuno.log](http://yunazuno.hatenablog.com/entry/2015/03/31/135712)
+- [メルカリでのNorikraの活用、 Mackerelを添えて](http://www.slideshare.net/kazeburo/norikra-mackerel)
+- [Norikraでそこそこ手軽にNetFlow解析 - yunazuno.log](http://yunazuno.hatenablog.com/entry/2015/03/31/135712)
 
 ## 必要なもの
 
