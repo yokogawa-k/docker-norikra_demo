@@ -2,7 +2,16 @@
 
 これ使って出来上がるもの
 
+- dummy のログを Norikra に投げて、Norikra で SQL 書くと Mackerel にグラフを生成する環境を構築できる
+
 ![構成図](misc/norikra-demo.png)
+
+dummer コンテナは dummy log を生成するため。本番などではアクセスログを in_tail で引っ張ってくるなど
+
+## 参考にさせていただいた資料/サイト
+
+[メルカリでのNorikraの活用、 Mackerelを添えて](http://www.slideshare.net/kazeburo/norikra-mackerel)
+[Norikraでそこそこ手軽にNetFlow解析 - yunazuno.log](http://yunazuno.hatenablog.com/entry/2015/03/31/135712)
 
 ## 必要なもの
 
@@ -31,7 +40,9 @@ MACKEREL_API_KEY=xxxx
 ## 使い方
 
 1. `docker-compose up` でコンテナを生成する
-2. ホストマシンのポート 26578 にアクセスして Norikra をいじくる。（クエリとか）
+2. ホストマシンのポート 26578 にアクセスして Norikra をいじくる。
+  - Norikra での qeury_group は `metrics` とすると Mackerel に投げるようになります
+  - percentile の UDF を利用する場合は qeury_group を `metrics_percentiles` とすること
 3. Mackerel にログがはかれているてることを確認する (ﾟдﾟ)ｳﾏｰ
 
 ## 注意事項
